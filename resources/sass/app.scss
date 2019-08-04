@@ -1,0 +1,187 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+// *******************
+// BUTTONS
+// *******************
+
+.button-reverse {
+  @apply .text-lg .font-thin .mr-5 .px-8 .py-3 .border .border-white;
+
+  &:hover {
+    @apply .text-dark .bg-white;
+  }
+}
+
+.button {
+  @apply .text-lg .font-light .mr-5 .px-8 .py-3 .border .border-dark;
+
+  &:hover {
+    @apply .text-white .bg-dark;
+  }
+}
+
+.input {
+  @apply .px-8 .py-2 .border .border-dark;
+}
+
+
+// *******************
+// NAVIGATION
+// *******************
+
+.header {
+  background: url("../images/triangles.svg");
+}
+
+.menu-list {
+  @apply .flex;
+
+  li {
+    @apply .mr-8 .text-lg .uppercase .tracking-wider .text-light;
+  }
+
+  li:last-of-type {
+    @apply .mr-0;
+  }
+
+  li:hover {
+    @apply .text-light-darker;
+  }
+}
+
+.hero-header {
+  font-size: 52px;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+// *******************
+// PRODUCTS
+// *******************
+
+.product-card {
+  @apply .w-1/4 .px-2 .text-center .mb-12;
+
+  .product-image {
+    @apply .mx-auto .mb-3;
+  }
+
+  .product-name {
+    @apply .mb-2 .main-text;
+  }
+
+  .product-price {
+    @apply .text-dark-lightest;
+  }
+}
+
+.product-card-wider {
+  @apply .w-1/3 .px-3 .text-center .mb-12;
+
+  .product-image {
+    @apply .mx-auto .mb-3;
+  }
+
+  .product-name {
+    @apply .mb-2 .main-text;
+  }
+
+  .product-price {
+    @apply .text-dark-lightest;
+  }
+}
+
+.product-card-recommend {
+  @apply .w-1/4 .px-3 .text-center .mb-12 .mr-5 .bg-white .p-6 .border .border-dark;
+
+  .product-image {
+    @apply .mx-auto .mb-3;
+  }
+
+  .product-name {
+    @apply .mb-2 .main-text;
+  }
+
+  .product-price {
+    @apply .text-dark-lightest;
+  }
+}
+
+.categories-list {
+  .list-header {
+    @apply .font-bold .mb-5;
+  }
+
+  li {
+    @apply .mb-3;
+  }
+}
+
+.product-main-image {
+  @apply .w-full .border .border-dark .flex .justify-center .items-center;
+  height: 400px;
+}
+
+.product-small-image {
+  @apply .border .border-dark .mr-5 .p-2;
+  height: 75px;
+  width: auto;
+}
+
+.product-stats {
+  font-size: 20px;
+  font-family: Montserat,sans-serif;
+  @apply .text-dark-lightest .font-bold;
+}
+
+.stock-available {
+  @apply .text-white .font-bold .rounded .inline-block .px-2 .py-1;
+  background: #28a745;
+}
+
+// *******************
+// TYPOGRAPHY
+// *******************
+
+.main-text {
+  @apply .text-lg .text-dark .font-light;
+}
+
+.heading {
+  @apply .text-4xl .text-center .mb-16 .font-bold;
+  font-family: Montserrat, sans-serif;
+}
+
+.heading-left {
+  @apply .text-4xl .text-left .font-bold;
+  font-family: Montserrat, sans-serif;
+}
+
+.mini-heading {
+  @apply .text-center .mb-4 .font-bold;
+  font-size: 22px;
+  font-family: Montserrat, sans-serif;
+}
+
+.mini-heading-left {
+  @apply .text-left .font-bold;
+  font-size: 22px;
+  font-family: Montserrat, sans-serif;
+}
+
+
+
+
