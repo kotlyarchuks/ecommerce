@@ -23,4 +23,8 @@ Route::get('/products/1', function(){
     return view('products.show');
 });
 
+Route::get('/cart', function(){
+    return view('cart');
+});
+
 Auth::routes();

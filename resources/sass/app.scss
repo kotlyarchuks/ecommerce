@@ -13,6 +13,12 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+.success-alert {
+  @apply .px-5 .py-4;
+  color: #3c763d;
+  background: #dff0d8;
+}
+
 // *******************
 // BUTTONS
 // *******************
@@ -26,10 +32,19 @@ body {
 }
 
 .button {
-  @apply .text-lg .font-light .mr-5 .px-8 .py-3 .border .border-dark;
+  @apply .text-lg .font-light .px-8 .py-3 .border .border-dark;
 
   &:hover {
     @apply .text-white .bg-dark;
+  }
+}
+
+.button-action {
+  @apply .text-lg .font-light .px-8 .py-3 .text-white;
+  background: #3ebfa4;
+
+  &:hover {
+    background: #35a48d;
   }
 }
 
@@ -152,6 +167,22 @@ body {
   background: #28a745;
 }
 
+.cart-counter {
+  top: 10px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  padding: 10px;
+  background: #ffd94d;
+  line-height: 0;
+  color: #000;
+  font-size: 14px;
+}
+
 // *******************
 // TYPOGRAPHY
 // *******************
@@ -161,17 +192,12 @@ body {
 }
 
 .heading {
-  @apply .text-4xl .text-center .mb-16 .font-bold;
-  font-family: Montserrat, sans-serif;
-}
-
-.heading-left {
-  @apply .text-4xl .text-left .font-bold;
+  @apply .text-4xl .font-bold;
   font-family: Montserrat, sans-serif;
 }
 
 .mini-heading {
-  @apply .text-center .mb-4 .font-bold;
+  @apply .font-bold;
   font-size: 22px;
   font-family: Montserrat, sans-serif;
 }

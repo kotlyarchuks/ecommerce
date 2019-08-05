@@ -7807,6 +7807,15 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+.success-alert {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #3c763d;
+  background: #dff0d8;
+}
+
 .button-reverse {
   font-size: 1.125rem;
   font-weight: 200;
@@ -7827,7 +7836,6 @@ body {
 .button {
   font-size: 1.125rem;
   font-weight: 300;
-  margin-right: 1.25rem;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 0.75rem;
@@ -7839,6 +7847,21 @@ body {
 .button:hover {
   color: #fff;
   background-color: #212121;
+}
+
+.button-action {
+  font-size: 1.125rem;
+  font-weight: 300;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #fff;
+  background: #3ebfa4;
+}
+
+.button-action:hover {
+  background: #35a48d;
 }
 
 .input {
@@ -8001,6 +8024,22 @@ body {
   background: #28a745;
 }
 
+.cart-counter {
+  top: 10px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  padding: 10px;
+  background: #ffd94d;
+  line-height: 0;
+  color: #000;
+  font-size: 14px;
+}
+
 .main-text {
   font-size: 1.125rem;
   color: #212121;
@@ -8009,22 +8048,11 @@ body {
 
 .heading {
   font-size: 2.25rem;
-  text-align: center;
-  margin-bottom: 4rem;
-  font-weight: 700;
-  font-family: Montserrat, sans-serif;
-}
-
-.heading-left {
-  font-size: 2.25rem;
-  text-align: left;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
 }
 
 .mini-heading {
-  text-align: center;
-  margin-bottom: 1rem;
   font-weight: 700;
   font-size: 22px;
   font-family: Montserrat, sans-serif;

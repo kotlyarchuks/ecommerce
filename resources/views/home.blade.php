@@ -23,7 +23,12 @@
                     <ul class="menu-list">
                         <li><a href="/register">Sign Up</a></li>
                         <li><a href="/login">Login</a></li>
-                        <li><a href="#">Cart</a></li>
+                        <li class="relative">
+                            <a href="#">Cart</a>
+                            @if (2==3)
+                                <div class="absolute cart-counter">0</div>
+                            @endif
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -49,14 +54,14 @@
 
     {{--  Main  --}}
     <main class="w-3/5 mx-auto pb-20">
-        <h3 class="heading">Laravel Ecommerce</h3>
+        <h3 class="heading text-center mb-16">Laravel Ecommerce</h3>
 
         <div class="text-lg font-light w-3/4 mx-auto mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Dolore vitae nisi, consequuntur illum dolores cumque pariatur quis provident deleniti nesciunt officia est
             reprehenderit sunt aliquid possimus temporibus enim eum hic lorem.
         </div>
         <div class="text-center mb-20">
-            <a href="#" class="button">Featured</a>
+            <a href="#" class="button mr-5">Featured</a>
             <a href="#" class="button">On Sale</a>
         </div>
 
@@ -110,7 +115,7 @@
     {{--  Blog  --}}
     <div class="blog bg-bgdarker">
         <div class="w-3/5 mx-auto pt-1">
-            <h3 class="heading mt-16">From Our Blog</h3>
+            <h3 class="heading text-center my-16">From Our Blog</h3>
             <div class="text-lg font-light w-3/4 mx-auto mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing
                 elit. Dolore vitae nisi, consequuntur illum dolores cumque pariatur quis provident deleniti nesciunt
                 officia est reprehenderit sunt aliquid possimus temporibus enim eum hic.
@@ -118,7 +123,7 @@
             <div class="flex -mx-4 pb-20">
                 <div class="blog-card px-4">
                     <img src="../images/blog/blog1.jpg" alt="" class="mb-2">
-                    <h4 class="mini-heading">Testing</h4>
+                    <h4 class="mini-heading text-center mb-5">Testing</h4>
                     <div class="text-lg font-light">
                         Testing content here Welcome to WordPress. This is your first post. Edit or delete it, then
                         start writing! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut nisl ultricies
@@ -128,7 +133,7 @@
                 </div>
                 <div class="blog-card px-4">
                     <img src="../images/blog/blog2.jpg" alt="" class="mb-2">
-                    <h4 class="mini-heading">New Laptop Available</h4>
+                    <h4 class="mini-heading text-center mb-5">New Laptop Available</h4>
                     <div class="text-lg font-light">
                         New Laptop Content. Welcome to WordPress. This is your first post. Edit or delete it, then start
                         writing! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut nisl ultricies ex
@@ -138,7 +143,7 @@
                 </div>
                 <div class="blog-card  px-4">
                     <img src="../images/blog/blog3.jpg" alt="" class="mb-2">
-                    <h4 class="mini-heading">Another Post</h4>
+                    <h4 class="mini-heading text-center mb-5">Another Post</h4>
                     <div class="text-lg font-light">
                         Another Post Content. Welcome to WordPress. This is your first post. Edit or delete it, then
                         start writing! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut nisl ultricies
