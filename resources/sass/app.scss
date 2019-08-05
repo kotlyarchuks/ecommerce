@@ -48,6 +48,14 @@ body {
   }
 }
 
+.button-black {
+  @apply .text-lg .px-10 .py-3 .text-white .bg-dark;
+
+  &:hover {
+    background: #3b3b3b;
+  }
+}
+
 .input {
   @apply .pl-3 .py-2 .border .border-dark-lightest;
 }
