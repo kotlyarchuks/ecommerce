@@ -17,8 +17,20 @@
             </div>
             <div class="right-side">
                 <ul class="menu-list">
-                    <li><a href="/register">Sign Up</a></li>
-                    <li><a href="/login">Login</a></li>
+                    @auth
+                        <li><a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    @else
+                        <li><a href="{{ route('register') }}">Sign Up</a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                    @endauth
                     <li class="relative">
                         <a href="#">Cart</a>
                         @if (2==3)
