@@ -26,10 +26,14 @@
             <h4 class="mini-heading text-left mb-8">{{ Cart::count() }} item(s) in Shopping Cart</h4>
                 @foreach($cart_items as $item)
                     <div class="flex justify-between items-center py-3 mb-4 border-dark border-t border-b">
-                        <img src="{{ asset('images/products') . '/' . $item->model->slug . '.jpg' }}" alt="" class="w-32 mr-5">
+                        <a href="{{ route('products.show', $item->model->slug) }}">
+                            <img src="{{ asset('images/products') . '/' . $item->model->slug . '.jpg' }}" alt="" class="w-32 mr-5">
+                        </a>
                         <div class="w-1/3">
-                            <div>{{ $item->model->name }}</div>
-                            <div class="text-dark-lightest">{{ $item->model->details }}</div>
+                            <a href="{{ route('products.show', $item->model->slug) }}">
+                                <div>{{ $item->model->name }}</div>
+                                <div class="text-dark-lightest">{{ $item->model->details }}</div>
+                            </a>
                         </div>
                         <div class="text-right text-sm mr-5">
                             <div>

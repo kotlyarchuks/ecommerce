@@ -38,6 +38,12 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        $duplicates = $this->searchForDuplicates($request);
+
+        if($duplicates){
+            return redirect()->route('cart.index')->with('message', 'This item is already in your cart!');
+        }
+
         Cart::add(request('id'), request('name'), 1, request('price'))
             ->associate(Product::class);
 
@@ -89,5 +95,12 @@ class CartController extends Controller
         Cart::remove($id);
 
         return redirect()->route('cart.index')->with('message', 'Item was removed from cart!');
+    }
+
+
+    protected function searchForDuplicates($request){
+        return Cart::content()->search(function($item) use ($request){
+            return $request->id === $item->id;
+        });
     }
 }
