@@ -4,12 +4,12 @@
             <div class="left-side flex items-baseline">
                 <div class="logo mr-12">
                     <h1 class="text-3xl font-bold tracking-wider text-light">
-                        <a href="#">Ecommerce</a>
+                        <a href="{{ route('home') }}">Ecommerce</a>
                     </h1>
                 </div>
                 <div class="menu">
                     <ul class="menu-list">
-                        <li><a href="#">Shop</a></li>
+                        <li><a href="{{ route('products.index') }}">Shop</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>

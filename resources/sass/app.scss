@@ -100,6 +100,8 @@ body {
 
   .product-image {
     @apply .mx-auto .mb-3;
+    height: 150px;
+    width: 150px;
   }
 
   .product-name {
@@ -116,6 +118,8 @@ body {
 
   .product-image {
     @apply .mx-auto .mb-3;
+    height: 150px;
+    width: 150px;
   }
 
   .product-name {
@@ -132,6 +136,8 @@ body {
 
   .product-image {
     @apply .mx-auto .mb-3;
+    height: 150px;
+    width: 150px;
   }
 
   .product-name {
@@ -155,7 +161,11 @@ body {
 
 .product-main-image {
   @apply .w-full .border .border-dark .flex .justify-center .items-center;
-  height: 400px;
+  height: 500px;
+
+  img {
+    max-height: 450px;
+  }
 }
 
 .product-small-image {

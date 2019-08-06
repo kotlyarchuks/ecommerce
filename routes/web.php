@@ -13,13 +13,10 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/products', 'ProductsController@index')->name('products.index');
+Route::get('/products/{slug}', 'ProductsController@show')->name('products.show');
 
-Route::get('/products', function(){
-    return view('products.index');
-});
 
 Route::get('/products/1', function(){
     return view('products.show');

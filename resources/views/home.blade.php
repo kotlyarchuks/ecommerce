@@ -8,12 +8,12 @@
                 <div class="left-side flex items-baseline">
                     <div class="logo mr-12">
                         <h1 class="text-3xl font-bold tracking-wider text-light">
-                            <a href="#">Ecommerce</a>
+                            <a href="{{ route('home') }}">Ecommerce</a>
                         </h1>
                     </div>
                     <div class="menu">
                         <ul class="menu-list">
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="{{ route('products.index') }}">Shop</a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Blog</a></li>
                         </ul>
@@ -78,49 +78,18 @@
         </div>
 
         <div class="products-grid flex flex-wrap -mx-2 mb-16">
-            <div class="product-card">
-                <img src="../images/products/appliance.jpg" alt="" class="product-image">
-                <div class="product-name">Appliance 1</div>
-                <div class="product-price">$1321.73</div>
-            </div>
-            <div class="product-card">
-                <img src="../images/products/camera.jpg" alt="" class="product-image">
-                <div class="product-name">Camera 1</div>
-                <div class="product-price">$1459.90</div>
-            </div>
-            <div class="product-card">
-                <img src="../images/products/laptop.jpg" alt="" class="product-image">
-                <div class="product-name">Laptop 1</div>
-                <div class="product-price">$1776.85</div>
-            </div>
-            <div class="product-card">
-                <img src="../images/products/phone.jpg" alt="" class="product-image">
-                <div class="product-name">Phone 1</div>
-                <div class="product-price">$947.57</div>
-            </div>
-            <div class="product-card">
-                <img src="../images/products/tablet.jpg" alt="" class="product-image">
-                <div class="product-name">Tablet 1</div>
-                <div class="product-price">$743.09</div>
-            </div>
-            <div class="product-card">
-                <img src="../images/products/tv.jpg" alt="" class="product-image">
-                <div class="product-name">TV 1</div>
-                <div class="product-price">$1321.73</div>
-            </div>
-            <div class="product-card">
-                <img src="../images/products/laptop.jpg" alt="" class="product-image">
-                <div class="product-name">Laptop 2</div>
-                <div class="product-price">$1431.73</div>
-            </div>
-            <div class="product-card">
-                <img src="../images/products/laptop.jpg" alt="" class="product-image">
-                <div class="product-name">Laptop 3</div>
-                <div class="product-price">$2523.99</div>
-            </div>
+            @foreach($products as $product)
+                <div class="product-card">
+                    <a href="{{ route('products.show', $product->slug) }}">
+                        <img src="{{ asset('images/products') . '/' . $product->slug . '.jpg' }}" alt="" class="product-image">
+                        <div class="product-name">{{ $product->name }}</div>
+                        <div class="product-price">{{ $product->presentPrice() }}</div>
+                    </a>
+                </div>
+            @endforeach
         </div>
         <div class="text-center">
-            <a href="#" class="button">View more products</a>
+            <a href="{{ route('products.index') }}" class="button">View more products</a>
         </div>
     </main>
 

@@ -80,33 +80,6 @@
         </div>
     </main>
 
-    {{--  Recommended  --}}
-    <section class="bg-bgdarker pb-16">
-        <div class="w-3/5 mx-auto">
-            <h4 class="mini-heading text-left pt-6 mb-6">You might also like...</h4>
-            <div class="flex -mx-5">
-                <div class="product-card-recommend">
-                    <img src="../images/products/laptop.jpg" alt="" class="product-image">
-                    <div class="product-name">Laptop 3</div>
-                    <div class="product-price">$2523.99</div>
-                </div>
-                <div class="product-card-recommend">
-                    <img src="../images/products/camera.jpg" alt="" class="product-image">
-                    <div class="product-name">Camera 3</div>
-                    <div class="product-price">$2523.99</div>
-                </div>
-                <div class="product-card-recommend">
-                    <img src="../images/products/appliance.jpg" alt="" class="product-image">
-                    <div class="product-name">Appliance 3</div>
-                    <div class="product-price">$2523.99</div>
-                </div>
-                <div class="product-card-recommend">
-                    <img src="../images/products/tv.jpg" alt="" class="product-image">
-                    <div class="product-name">TV 3</div>
-                    <div class="product-price">$2523.99</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('recommended')
 
 @endsection
