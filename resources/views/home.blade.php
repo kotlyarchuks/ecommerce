@@ -37,8 +37,8 @@
                         @endauth
                         <li class="relative">
                             <a href="{{ route('cart.index') }}">Cart</a>
-                            @if (2==3)
-                                <div class="absolute cart-counter">0</div>
+                            @if (Cart::count() > 0)
+                                <div class="absolute cart-counter">{{ Cart::count() }}</div>
                             @endif
                         </li>
                     </ul>
