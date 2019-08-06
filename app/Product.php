@@ -20,4 +20,9 @@ class Product extends Model
     {
         return '$'. number_format($this->price / 100, 2);
     }
+
+    public function scopeRecommended($query, $count = 4)
+    {
+        return $query->inRandomOrder()->take($count);
+    }
 }

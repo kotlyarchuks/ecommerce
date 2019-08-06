@@ -17,14 +17,13 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/products', 'ProductsController@index')->name('products.index');
 Route::get('/products/{slug}', 'ProductsController@show')->name('products.show');
 
+Route::get('/cart', 'CartController@index')->name('cart.index');
+Route::post('/cart', 'CartController@store')->name('cart.store');
 
-Route::get('/products/1', function(){
-    return view('products.show');
+Route::get('/empty', function(){
+    \Gloudemans\Shoppingcart\Facades\Cart::destroy();
 });
 
-Route::get('/cart', function(){
-    return view('cart');
-});
 
 Route::get('/checkout', function(){
     return view('checkout');

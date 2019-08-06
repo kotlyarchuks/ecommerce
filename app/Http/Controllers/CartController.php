@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->take(12)->get();
-
-        return view('products.index', compact('products'));
+        $cart_items = Cart::content();
+        $recommended = Product::recommended(4)->get();
+        return view('cart', compact(['recommended', 'cart_items']));
     }
 
     /**
@@ -37,7 +38,10 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Cart::add(request('id'), request('name'), 1, request('price'))
+            ->associate(Product::class);
+
+        return redirect()->route('cart.index')->with('message', 'Item was added to cart!');
     }
 
     /**
@@ -46,12 +50,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $product = Product::where('slug', $slug)->first();
-        $recommended = Product::where('slug', '!=', $slug)->recommended(4)->get();
-
-        return view('products.show', compact(['product', 'recommended']));
+        //
     }
 
     /**
