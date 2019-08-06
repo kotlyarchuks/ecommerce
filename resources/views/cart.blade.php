@@ -32,7 +32,13 @@
                             <div class="text-dark-lightest">{{ $item->model->details }}</div>
                         </div>
                         <div class="text-right text-sm mr-5">
-                            <div><a href="#" class="hover:text-dark-lighter">Remove</a></div>
+                            <div>
+                                <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="hover:text-dark-lighter">Remove</button>
+                                </form>
+                            </div>
                             <div><a href="#" class="hover:text-dark-lighter">Save for Later</a></div>
                         </div>
                         <div class="mr-5 text-sm">
@@ -63,13 +69,13 @@
                             </div>
                             <div class="text-right">
                                 <div>Subtotal</div>
-                                <div>Tax (13%)</div>
+                                <div>Tax ({{ config('cart.tax') }}%)</div>
                                 <div class="mini-heading">Total</div>
                             </div>
                             <div class="text-right">
-                                <div>$2027.49</div>
-                                <div>$263.57</div>
-                                <div class="mini-heading">$2291.06</div>
+                                <div>{{ presentPrice(Cart::subtotal()) }}</div>
+                                <div>{{ presentPrice(Cart::tax()) }}</div>
+                                <div class="mini-heading">{{ presentPrice(Cart::total()) }}</div>
                             </div>
                         </div>
 

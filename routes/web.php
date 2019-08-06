@@ -19,6 +19,8 @@ Route::get('/products/{slug}', 'ProductsController@show')->name('products.show')
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+
 
 Route::get('/empty', function(){
     \Gloudemans\Shoppingcart\Facades\Cart::destroy();
