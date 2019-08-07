@@ -20,11 +20,10 @@ Route::get('/products/{slug}', 'ProductsController@show')->name('products.show')
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+Route::post('cart/saveForLater/{product}', 'CartController@saveForLater')->name('cart.saveForLater');
 
-
-Route::get('/empty', function(){
-    \Gloudemans\Shoppingcart\Facades\Cart::destroy();
-});
+Route::delete('/saveForLater/{product}', 'SavedForLaterController@destroy')->name('saveForLater.destroy');
+Route::post('/saveForLater/{product}', 'SavedForLaterController@moveToCart')->name('saveForLater.moveToCart');
 
 
 Route::get('/checkout', function(){
