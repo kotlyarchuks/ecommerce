@@ -6,7 +6,7 @@
             @foreach($recommended as $recommended_product)
                 <div class="product-card-recommend">
                     <a href="{{ route('products.show', $recommended_product->slug) }}">
-                        <img src="{{ asset('images/products') . '/' . $recommended_product->slug . '.jpg' }}" alt="" class="product-image">
+                        <img src="{{ getProductImage($recommended_product->slug) }}" alt="" class="product-image">
                         <div class="product-name">{{ $recommended_product->name }}</div>
                         <div class="product-price">{{ $recommended_product->presentPrice() }}</div>
                     </a>

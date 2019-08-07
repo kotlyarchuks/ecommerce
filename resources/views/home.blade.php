@@ -38,7 +38,7 @@
                         <li class="relative">
                             <a href="{{ route('cart.index') }}">Cart</a>
                             @if (Cart::count() > 0)
-                                <div class="absolute cart-counter">{{ Cart::count() }}</div>
+                                <div class="absolute cart-counter">{{ Cart::instance('default')->count() }}</div>
                             @endif
                         </li>
                     </ul>
@@ -81,7 +81,7 @@
             @foreach($products as $product)
                 <div class="product-card">
                     <a href="{{ route('products.show', $product->slug) }}">
-                        <img src="{{ asset('images/products') . '/' . $product->slug . '.jpg' }}" alt="" class="product-image">
+                        <img src="{{ getProductImage($product->slug) }}" alt="" class="product-image">
                         <div class="product-name">{{ $product->name }}</div>
                         <div class="product-price">{{ $product->presentPrice() }}</div>
                     </a>

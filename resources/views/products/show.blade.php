@@ -24,7 +24,7 @@
     <main class="w-3/5 mx-auto pt-20 pb-20 flex main-text">
         <div class="w-1/2">
             <div class="product-main-image mb-5">
-                <img src="{{ asset('images/products') . '/' . $product->slug . '.jpg' }}" alt="" class="">
+                <img src="{{ getProductImage($product->slug) }}" alt="" class="">
             </div>
 {{--            <div class="flex">--}}
 {{--                <img src="../images/products/laptop.jpg" alt="" class="product-small-image">--}}

@@ -34,7 +34,7 @@
                     <li class="relative">
                         <a href="{{ route('cart.index') }}">Cart</a>
                         @if (Cart::count() > 0)
-                            <div class="absolute cart-counter">{{ Cart::count() }}</div>
+                            <div class="absolute cart-counter">{{ Cart::instance('default')->count() }}</div>
                         @endif
                     </li>
                 </ul>
