@@ -46,6 +46,11 @@ body {
   &:hover {
     background: #35a48d;
   }
+
+  &:disabled {
+    background: lighten(#3ebfa4, 30%);
+    cursor: not-allowed;
+  }
 }
 
 .button-black {
@@ -226,6 +231,26 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  @apply .input;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#card-errors {
+  color: #fa755a;
+}
 
 
 

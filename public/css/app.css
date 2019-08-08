@@ -7864,6 +7864,11 @@ body {
   background: #35a48d;
 }
 
+.button-action:disabled {
+  background: #b0e6da;
+  cursor: not-allowed;
+}
+
 .button-black {
   font-size: 1.125rem;
   padding-left: 2.5rem;
@@ -8086,6 +8091,31 @@ body {
   font-weight: 700;
   font-size: 22px;
   font-family: Montserrat, sans-serif;
+}
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+
+.StripeElement {
+  padding-left: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  border-color: #919191;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#card-errors {
+  color: #fa755a;
 }
 
 @media (min-width: 640px){

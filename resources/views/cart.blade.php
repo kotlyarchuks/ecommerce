@@ -95,7 +95,7 @@
                 {{--  Buttons  --}}
                 <div class="flex justify-between items-center mb-12">
                     <a href="{{ route('products.index') }}" class="button">Continue Shopping</a>
-                    <a href="#" class="button-action">Proceed to Checkout</a>
+                    <a href="{{ route('checkout.index') }}" class="button-action">Proceed to Checkout</a>
                 </div>
             @else
                 <h4 class="mini-heading text-left mb-8">There are no items in Shopping Cart</h4>
