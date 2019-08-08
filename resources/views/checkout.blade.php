@@ -32,41 +32,41 @@
                     @csrf
                     <div class="mb-6">
                         <label for="email">Email Address</label>
-                        <input type="email" class="input w-full" name="email" id="email">
+                        <input type="email" class="input w-full" name="email" id="email" required>
                     </div>
                     <div class="mb-6">
                         <label for="name">Name</label>
-                        <input type="text" class="input w-full" name="name" id="name">
+                        <input type="text" class="input w-full" name="name" id="name" required>
                     </div>
                     <div class="mb-6">
                         <label for="address">Address</label>
-                        <input type="text" class="input w-full" name="address" id="address">
+                        <input type="text" class="input w-full" name="address" id="address" required>
                     </div>
                     <div class="flex mb-6">
                         <div class="w-1/2 mr-6">
                             <label for="city">City</label>
-                            <input type="text" class="input w-full" name="city" id="city">
+                            <input type="text" class="input w-full" name="city" id="city" required>
                         </div>
                         <div class="w-1/2">
                             <label for="province">Province</label>
-                            <input type="text" class="input w-full" name="province" id="province">
+                            <input type="text" class="input w-full" name="province" id="province" required>
                         </div>
                     </div>
                     <div class="flex mb-12">
                         <div class="w-1/2 mr-6">
                             <label for="postal">Postal Code</label>
-                            <input type="text" class="input w-full" name="postal" id="postal">
+                            <input type="text" class="input w-full" name="postal" id="postal" required>
                         </div>
                         <div class="w-1/2">
                             <label for="phone">Phone</label>
-                            <input type="text" class="input w-full" name="phone" id="phone">
+                            <input type="text" class="input w-full" name="phone" id="phone" required>
                         </div>
                     </div>
 
                     <h4 class="mini-heading text-left mb-6">Payment Details</h4>
                     <div class="mb-6">
                         <label for="card_name">Name on card</label>
-                        <input type="text" class="input w-full" name="card_name" id="card_name">
+                        <input type="text" class="input w-full" name="card_name" id="card_name" required>
                     </div>
                     <div class="mb-10">
                         <label for="card-element">
@@ -173,7 +173,13 @@
                 document.getElementById('submit-payment').disabled = true;
                 event.preventDefault();
 
-                stripe.createToken(card).then(function (result) {
+                stripe.createToken(card, {
+                    'name' : document.getElementById('card_name').value,
+                    'address_line1' : document.getElementById('address').value,
+                    'address_city' : document.getElementById('city').value,
+                    'address_state' : document.getElementById('province').value,
+                    'address_zip' : document.getElementById('postal').value,
+                }).then(function (result) {
                     if (result.error) {
                         // Inform the user if there was an error.
                         var errorElement = document.getElementById('card-errors');

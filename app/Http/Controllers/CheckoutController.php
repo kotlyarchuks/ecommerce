@@ -48,6 +48,7 @@ class CheckoutController extends Controller
                 'amount' => Cart::total() / 100,
                 'source' => $request->stripeToken,
                 'description' => 'Order',
+                'receipt_email' => $request->email,
                 'metadata' => [
                     'contents' => $contents,
                     'quantity' => Cart::count()
