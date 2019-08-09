@@ -23,9 +23,20 @@
                 <div class="success-alert mb-5">{{ session('message') }}</div>
             @endif
 
+            @if(count($errors) > 0)
+                <div class="text-red-300">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{!! $error !!}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             {{--        Cart        --}}
             @if(Cart::instance('default')->count() > 0)
-                <h4 class="mini-heading text-left mb-8">{{ Cart::instance('default')->count() }} item(s) in Shopping Cart</h4>
+                <h4 class="mini-heading text-left mb-8">{{ Cart::instance('default')->count() }} item(s) in Shopping
+                    Cart</h4>
                 @foreach($cart_items as $item)
                     <div class="flex justify-between items-center py-3 mb-4 border-dark border-t border-b">
                         <a href="{{ route('products.show', $item->model->slug) }}">
@@ -54,15 +65,14 @@
                             </div>
                         </div>
                         <div class="mr-5 text-sm">
-                            <select name="" id="" class="border-dark-lightest border">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                            <select name="" id="" class="border-dark-lightest border qty-select"
+                                    data-row="{{ $item->rowId }}">
+                                @for($i = 1; $i < 6; $i++)
+                                    <option value="{{ $i }}" {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                @endfor
                             </select>
                         </div>
-                        <div>{{ $item->model->presentPrice() }}</div>
+                        <div>{{ $item->model->presentPrice($item->qty) }}</div>
                     </div>
                 @endforeach
                 {{--      Coupon      --}}
@@ -136,13 +146,6 @@
                             </div>
                         </div>
                         <div class="mr-5 text-sm">
-                            <select name="" id="" class="border-dark-lightest border">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
                         </div>
                         <div>{{ $item->model->presentPrice() }}</div>
                     </div>
@@ -156,4 +159,25 @@
 
     @include('recommended')
 
+@endsection
+
+@section('scripts')
+    <script>
+        window.onload = () => {
+            const selects = document.querySelectorAll('.qty-select');
+
+            Array.from(selects).forEach(select => {
+                let rowId = select.getAttribute('data-row');
+                select.addEventListener('change', () => {
+                    axios.patch('/cart/' + rowId, {
+                        'qty': select.value
+                    }).then(response => {
+                        location.href = '/cart';
+                    }).catch(error => {
+                        location.href = '/cart';
+                    });
+                });
+            })
+        };
+    </script>
 @endsection

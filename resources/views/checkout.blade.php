@@ -121,7 +121,7 @@
 
 @section('scripts')
     <script>
-        (function () {
+        window.onload = () => {
             // Create a Stripe client.
             var stripe = Stripe('pk_test_iaWyyzKXsHJuBR9sq0GoBwlr');
 
@@ -204,6 +204,6 @@
                 // Submit the form
                 form.submit();
             }
-        })();
+        }
     </script>
 @endsection

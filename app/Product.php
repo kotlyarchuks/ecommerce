@@ -16,9 +16,9 @@ class Product extends Model
         });
     }
 
-    public function presentPrice()
+    public function presentPrice($count = 1)
     {
-        return '$'. number_format($this->price / 100, 2);
+        return '$'. number_format(($this->price * $count) / 100, 2);
     }
 
     public function scopeRecommended($query, $count = 4)

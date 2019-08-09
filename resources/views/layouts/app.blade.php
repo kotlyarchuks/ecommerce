@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
 
     <!-- Fonts -->
@@ -35,7 +36,6 @@
         </div>
     </footer>
 
-    <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts', '')
 </body>
 </html>
