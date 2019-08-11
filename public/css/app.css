@@ -8010,6 +8010,11 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.categories-list .active {
+  color: black;
+  font-weight: 400;
+}
+
 .product-main-image {
   width: 100%;
   border-width: 1px;

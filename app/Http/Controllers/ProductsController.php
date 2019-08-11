@@ -2,21 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Http\Requests\ProductsIndexRequest;
 use App\Product;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
-{
+class ProductsController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ProductsIndexRequest $request)
     {
-        $products = Product::inRandomOrder()->take(12)->get();
+        $categories = Category::all();
+        $categoryName = 'Featured';
 
-        return view('products.index', compact('products'));
+        if (request()->has('category'))
+        {
+            $category = Category::where('slug', $request->category)->first();
+            $products = $category->products()->get();
+            $categoryName = $category->name;
+        } else
+        {
+            $products = Product::inRandomOrder()->take(12)->get();
+        }
+
+        return view('products.index', compact(['products', 'categories', 'categoryName']));
     }
 
     /**
@@ -32,7 +46,7 @@ class ProductsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,7 +57,7 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
@@ -57,7 +71,7 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +82,8 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -80,7 +94,7 @@ class ProductsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

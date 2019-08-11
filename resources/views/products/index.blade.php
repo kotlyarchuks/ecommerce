@@ -21,18 +21,19 @@
         <div class="w-1/4 main-text pt-6">
             <ul class="categories-list">
                 <li class="list-header">By Category</li>
-                <li><a href="#">Laptops</a></li>
-                <li><a href="#">Desktops</a></li>
-                <li><a href="#">Mobile Phones</a></li>
-                <li><a href="#">Tablets</a></li>
-                <li><a href="#">TVs</a></li>
-                <li><a href="#">Digital Cameras</a></li>
-                <li><a href="#">Appliances</a></li>
+                @foreach($categories as $category)
+                <li>
+                    <a href="{{ route('products.index', ['category' => $category->slug]) }}"
+                    class="{{ $category->slug === request('category') ? 'active' : '' }}">
+                        {{ $category->name }}
+                    </a>
+                </li>
+                @endforeach
             </ul>
         </div>
         <div class="w-3/4">
             <div class="flex justify-between items-baseline mb-16">
-                <h3 class="heading">Featured</h3>
+                <h3 class="heading">{{ $categoryName }}</h3>
                 <div>
                     <span class="font-bold">Price:</span>
                     <a href="#">Low to High</a>
@@ -41,7 +42,7 @@
                 </div>
             </div>
             <div class="products-grid flex flex-wrap -mx-2 mb-16">
-                @foreach($products as $product)
+                @forelse($products as $product)
                     <div class="product-card-wider">
                         <a href="{{ route('products.show', $product->slug) }}">
                             <img src="{{ getProductImage($product->slug) }}" alt="" class="product-image">
@@ -49,7 +50,9 @@
                             <div class="product-price">{{ $product->presentPrice() }}</div>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <h3 class="mini-heading mb-64">There are no products in this category</h3>
+                @endforelse
             </div>
         </div>
     </main>

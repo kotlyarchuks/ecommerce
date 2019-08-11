@@ -161,6 +161,11 @@ body {
 
   li {
     @apply .mb-3;
+
+    .active {
+      color: darken(#212121, 50%);
+      font-weight: 400;
+    }
   }
 }
 

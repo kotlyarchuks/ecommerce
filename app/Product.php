@@ -7,15 +7,6 @@ use Illuminate\Support\Str;
 
 class Product extends Model
 {
-    protected static function boot()
-    {
-        parent::boot();
-
-        self::creating(function($product){
-            $product->slug = Str::slug($product->title);
-        });
-    }
-
     public function presentPrice($count = 1)
     {
         return '$'. number_format(($this->price * $count) / 100, 2);
@@ -24,5 +15,10 @@ class Product extends Model
     public function scopeRecommended($query, $count = 4)
     {
         return $query->inRandomOrder()->take($count);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
     }
 }
