@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\ProductsIndexRequest;
 use App\Product;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller {
@@ -17,20 +18,33 @@ class ProductsController extends Controller {
      */
     public function index(ProductsIndexRequest $request)
     {
-        $categories = Category::all();
+        // Get config value and set default category title
+        $products_per_page = config('shop.products_in_each_category_page');
         $categoryName = 'Featured';
 
+        // Get products of given category or all if not given
         if (request()->has('category'))
         {
-            $category = Category::where('slug', $request->category)->first();
-            $products = $category->products()->get();
+            $category = Category::matchSlug($request->category);
+            $products = Product::matchCategory($category);
             $categoryName = $category->name;
         } else
         {
-            $products = Product::inRandomOrder()->take(12)->get();
+            $products = Product::featured()->take($products_per_page);
         }
 
-        return view('products.index', compact(['products', 'categories', 'categoryName']));
+        // Apply sorting if given
+        if(request('sort') === 'high_to_low'){
+            $products = $products->orderByDesc('price');
+        } elseif (request('sort') === 'low_to_high'){
+            $products = $products->orderBy('price');
+        }
+
+        // Paginate by given config number and get all categories
+        $products = $products->paginate($products_per_page);
+        $categories = Category::all();
+
+        return view('products.index', compact('products', 'categories', 'categoryName'));
     }
 
     /**

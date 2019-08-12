@@ -17,7 +17,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'asus-tuf-gaming',
             'details' => '15.6 GTX 1060 2.2kg',
             'price' => '51590',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eos harum hic ipsum minima nesciunt quo quod quos saepe ut.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eos harum hic ipsum minima nesciunt quo quod quos saepe ut.',
+            'featured' => true
         ])->categories()->attach(1);
 
         Product::create([
@@ -33,6 +34,7 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'xiaomi-mi-gaming-laptop',
             'details' => '15.6 GTX 1060 2.7kg',
             'price' => '69990',
+            'featured' => true,
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolores ea eos minus reiciendis? Blanditiis cupiditate dolorum id qui quia.'
         ])->categories()->attach(1);
 
@@ -173,7 +175,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'msi-trident-a',
             'details' => '16GB i7',
             'price' => '141990',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'featured' => true
         ])->categories()->attach(2);
 
         Product::create([
@@ -225,7 +228,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'xiaomi-mi-9t',
             'details' => '6/128GB',
             'price' => '24990',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'featured' => true
         ])->categories()->attach(3);
 
 

@@ -12,4 +12,9 @@ class Category extends Model
     {
         return $this->belongsToMany(Product::class);
     }
+
+    public function scopeMatchSlug($query, $slug)
+    {
+        return $query->where('slug', $slug)->first();
+    }
 }

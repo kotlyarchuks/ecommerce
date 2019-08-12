@@ -22,12 +22,12 @@
             <ul class="categories-list">
                 <li class="list-header">By Category</li>
                 @foreach($categories as $category)
-                <li>
-                    <a href="{{ route('products.index', ['category' => $category->slug]) }}"
-                    class="{{ $category->slug === request('category') ? 'active' : '' }}">
-                        {{ $category->name }}
-                    </a>
-                </li>
+                    <li>
+                        <a href="{{ route('products.index', ['category' => $category->slug]) }}"
+                           class="{{ $category->slug === request('category') ? 'active' : '' }}">
+                            {{ $category->name }}
+                        </a>
+                    </li>
                 @endforeach
             </ul>
         </div>
@@ -36,9 +36,9 @@
                 <h3 class="heading">{{ $categoryName }}</h3>
                 <div>
                     <span class="font-bold">Price:</span>
-                    <a href="#">Low to High</a>
+                    <a href="{{ request()->fullUrlWithQuery(['sort' => 'low_to_high']) }}">Low to High</a>
                     |
-                    <a href="#">High to Low</a>
+                    <a href="{{ request()->fullUrlWithQuery(['sort' => 'high_to_low']) }}">High to Low</a>
                 </div>
             </div>
             <div class="products-grid flex flex-wrap -mx-2 mb-16">
@@ -54,6 +54,9 @@
                     <h3 class="mini-heading mb-64">There are no products in this category</h3>
                 @endforelse
             </div>
+            @if(request()->has('category'))
+                <div class="flex justify-center">{{ $products->appends(request()->query())->links() }}</div>
+            @endif
         </div>
     </main>
 

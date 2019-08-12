@@ -8010,7 +8010,7 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.categories-list .active {
+.categories-list li .active {
   color: black;
   font-weight: 400;
 }
@@ -8121,6 +8121,22 @@ body {
 
 #card-errors {
   color: #fa755a;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li {
+  margin-right: 15px;
+  font-size: 22px;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+.pagination .active {
+  font-weight: 400;
 }
 
 @media (min-width: 640px){

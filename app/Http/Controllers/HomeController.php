@@ -14,7 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->take(8)->get();
+        $products_count = config('shop.products_on_home_page');
+        $products = Product::inRandomOrder()->take($products_count)->get();
 
         return view('home', compact('products'));
     }

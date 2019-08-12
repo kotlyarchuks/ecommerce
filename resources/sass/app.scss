@@ -258,4 +258,19 @@ body {
 }
 
 
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  li {
+    margin-right: 15px;
+    font-size: 22px;
+    padding: 10px;
+    border: 1px solid #eee;
+  }
+
+  .active {
+    font-weight: 400;
+  }
+}
 

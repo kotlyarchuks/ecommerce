@@ -21,4 +21,16 @@ class Product extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function scopeMatchCategory($query, $category)
+    {
+        return $query->whereHas('categories', function($query) use($category){
+            $query->where('slug', $category->slug);
+        });
+    }
+
+    public function scopeFeatured($query)
+    {
+        return $query->where('featured', true);
+    }
 }
