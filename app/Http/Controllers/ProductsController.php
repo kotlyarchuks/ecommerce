@@ -22,7 +22,7 @@ class ProductsController extends Controller {
         $products_per_page = config('shop.products_in_each_category_page');
         $categoryName = 'Featured';
 
-        // Get products of given category or all if not given
+        // Get products of given category or featured if not given
         if (request()->has('category'))
         {
             $category = Category::matchSlug($request->category);
@@ -30,14 +30,12 @@ class ProductsController extends Controller {
             $categoryName = $category->name;
         } else
         {
-            $products = Product::featured()->take($products_per_page);
+            $products = Product::featured($products_per_page);
         }
 
         // Apply sorting if given
-        if(request('sort') === 'high_to_low'){
-            $products = $products->orderByDesc('price');
-        } elseif (request('sort') === 'low_to_high'){
-            $products = $products->orderBy('price');
+        if(request()->has('sort')){
+            $products = $products->sortByPrice($request->sort);
         }
 
         // Paginate by given config number and get all categories

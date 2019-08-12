@@ -29,8 +29,19 @@ class Product extends Model
         });
     }
 
-    public function scopeFeatured($query)
+    public function scopeFeatured($query, $count)
     {
-        return $query->where('featured', true);
+        return $query->where('featured', true)->take($count);
+    }
+
+    public function scopeSortByPrice($query, $type)
+    {
+        if($type === 'high_to_low'){
+            return $query->orderByDesc('price');
+        } elseif ($type === 'low_to_high'){
+            return $query->orderBy('price');
+        } else {
+            return $query;
+        }
     }
 }
