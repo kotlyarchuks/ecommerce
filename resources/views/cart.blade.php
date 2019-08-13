@@ -31,6 +31,7 @@
                         @endforeach
                     </ul>
                 </div>
+                <div class="h-16"></div>
             @endif
 
             {{--        Cart        --}}
@@ -76,13 +77,20 @@
                     </div>
                 @endforeach
                 {{--      Coupon      --}}
-                <div class="flex justify-end mb-4"><a href="#" class="hover:text-dark-lighter">Have a code?</a></div>
-                <div class="flex justify-end">
-                    <div class="flex p-3 border border-dark-lightest">
-                        <input type="text" class="px-3 border border-dark-lightest">
-                        <button class="button">Apply</button>
+                @if(! session()->has('coupon'))
+                    <div class="flex justify-end mb-4"><a href="#" class="hover:text-dark-lighter">Have a code?</a>
                     </div>
-                </div>
+                    <div class="flex justify-end">
+                        <div class="">
+                            <form action="{{ route('coupon.store') }}" method="POST"
+                                  class="flex p-3 border border-dark-lightest">
+                                @csrf
+                                <input type="text" class="px-3 border border-dark-lightest" name="code" id="code">
+                                <button class="button">Apply</button>
+                            </form>
+                        </div>
+                    </div>
+                @endif
 
                 {{--  Total  --}}
                 <div class="bg-bgdarker p-5 flex justify-between my-6">
@@ -92,13 +100,31 @@
                     </div>
                     <div class="text-right">
                         <div>Subtotal</div>
+                        @if(session()->has('coupon'))
+                            <div class="flex items-center">
+                                Coupon - {{ session()->get('coupon')['code'] }}
+                                <form action="{{ route('coupon.destroy') }}" method="POST" id="destroy-coupon"
+                                      class="inline">
+                                    @csrf
+                                    @method('delete')
+                                    <img src="https://img.icons8.com/ios-glyphs/30/fa314a/trash--v1.png"
+                                         class="ml-2 w-4 hover:cursor-pointer"
+                                         onclick="document.getElementById('destroy-coupon').submit()">
+                                </form>
+                            </div>
+                            <div>New Subtotal</div>
+                        @endif
                         <div>Tax ({{ config('cart.tax') }}%)</div>
                         <div class="mini-heading">Total</div>
                     </div>
                     <div class="text-right">
-                        <div>{{ presentPrice(Cart::subtotal()) }}</div>
-                        <div>{{ presentPrice(Cart::tax()) }}</div>
-                        <div class="mini-heading">{{ presentPrice(Cart::total()) }}</div>
+                        <div>{{ presentPrice(Cart::instance('default')->subtotal()) }}</div>
+                        @if(session()->has('coupon'))
+                            <div>- {{ presentPrice($totals['discount']) }}</div>
+                            <div>{{ presentPrice($totals['subtotal']) }}</div>
+                        @endif
+                        <div>{{ presentPrice($totals['tax']) }}</div>
+                        <div class="mini-heading">{{ presentPrice($totals['total']) }}</div>
                     </div>
                 </div>
 

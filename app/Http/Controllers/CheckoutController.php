@@ -45,17 +45,19 @@ class CheckoutController extends Controller
         try {
             Stripe::charges()->create([
                 'currency' => 'USD',
-                'amount' => Cart::total() / 100,
+                'amount' => session()->get('total') / 100,
                 'source' => $request->stripeToken,
                 'description' => 'Order',
                 'receipt_email' => $request->email,
                 'metadata' => [
                     'contents' => $contents,
-                    'quantity' => Cart::count()
+                    'quantity' => Cart::count(),
+                    'discount' => json_encode(session()->get('coupon'))
                 ]
             ]);
 
             Cart::instance('default')->destroy();
+            session()->forget('coupon', 'total');
 
             return redirect()
                 ->route('confirmation.index')

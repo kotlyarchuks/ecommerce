@@ -19,7 +19,9 @@ class CartController extends Controller
         $cart_items = Cart::content();
         $saved_items = Cart::instance('saveForLater')->content();
         $recommended = Product::recommended(4)->get();
-        return view('cart', compact(['recommended', 'cart_items', 'saved_items']));
+
+        $totals = $this->calculateTotals();
+        return view('cart', compact('recommended', 'cart_items', 'saved_items', 'totals'));
     }
 
     /**
@@ -136,5 +138,17 @@ class CartController extends Controller
         return Cart::instance($cartInstance)->content()->search(function($item) use ($needle){
             return $needle === $item->id;
         });
+    }
+
+    protected function calculateTotals(){
+        $discount = session()->has('coupon') ? session()->get('coupon')['discount'] : 0;
+        $tax_rate = config('cart.tax') / 100;
+        $subtotal = round(Cart::instance('default')->subtotal() - $discount);
+        $tax = $subtotal * $tax_rate;
+        $total = round($subtotal + $tax);
+
+        session()->put('total', $total);
+
+        return compact('discount', 'subtotal', 'tax', 'total');
     }
 }
