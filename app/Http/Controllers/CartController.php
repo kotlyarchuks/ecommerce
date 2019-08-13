@@ -18,7 +18,7 @@ class CartController extends Controller
     {
         $cart_items = Cart::content();
         $saved_items = Cart::instance('saveForLater')->content();
-        $recommended = Product::recommended(4)->get();
+        $recommended = $cart_items->first()->model->recommended(4)->get();
 
         $totals = $this->calculateTotals();
         return view('cart', compact('recommended', 'cart_items', 'saved_items', 'totals'));

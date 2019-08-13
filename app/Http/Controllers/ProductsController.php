@@ -75,7 +75,7 @@ class ProductsController extends Controller {
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->first();
-        $recommended = Product::where('slug', '!=', $slug)->recommended(4)->get();
+        $recommended = $product->recommended(4)->get();
 
         return view('products.show', compact(['product', 'recommended']));
     }

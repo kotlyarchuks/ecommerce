@@ -12,14 +12,17 @@ class Product extends Model
         return '$'. number_format(($this->price * $count) / 100, 2);
     }
 
-    public function scopeRecommended($query, $count = 4)
-    {
-        return $query->inRandomOrder()->take($count);
-    }
-
     public function categories()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function recommended($count = 4)
+    {
+        $category = $this->categories->first();
+        return $this->whereHas('categories', function($query) use($category){
+            $query->where('name', $category->name);
+        })->where('id', '!=', $this->id)->inRandomOrder()->take($count);
     }
 
     public function scopeMatchCategory($query, $category)
