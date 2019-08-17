@@ -76,8 +76,9 @@ class ProductsController extends Controller {
     {
         $product = Product::where('slug', $slug)->first();
         $recommended = $product->recommended(4)->get();
+        $images = $product->images ? json_decode($product->images) : null;
 
-        return view('products.show', compact(['product', 'recommended']));
+        return view('products.show', compact('product', 'recommended', 'images'));
     }
 
     /**

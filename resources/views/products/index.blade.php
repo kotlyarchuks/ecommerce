@@ -45,7 +45,7 @@
                 @forelse($products as $product)
                     <div class="product-card-wider">
                         <a href="{{ route('products.show', $product->slug) }}">
-                            <img src="{{ getProductImage($product->slug) }}" alt="" class="product-image">
+                            <img src="{{ getProductImage($product->image) }}" alt="" class="product-image">
                             <div class="product-name">{{ $product->name }}</div>
                             <div class="product-price">{{ $product->presentPrice() }}</div>
                         </a>

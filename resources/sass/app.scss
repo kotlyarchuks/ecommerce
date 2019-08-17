@@ -181,7 +181,11 @@ body {
 .product-small-image {
   @apply .border .border-dark .mr-5 .p-2;
   height: 75px;
-  width: auto;
+  width: 100px;
+}
+
+.product-small-image.selected {
+  border: 2px solid #000;
 }
 
 .product-stats {

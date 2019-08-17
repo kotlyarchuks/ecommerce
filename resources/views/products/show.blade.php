@@ -24,13 +24,16 @@
     <main class="w-3/5 mx-auto pt-20 pb-20 flex main-text">
         <div class="w-1/2">
             <div class="product-main-image mb-5">
-                <img src="{{ getProductImage($product->slug) }}" alt="" class="">
+                <img src="{{ getProductImage($product->image) }}" alt="" class="">
             </div>
-{{--            <div class="flex">--}}
-{{--                <img src="../images/products/laptop.jpg" alt="" class="product-small-image">--}}
-{{--                <img src="../images/products/laptop.jpg" alt="" class="product-small-image">--}}
-{{--                <img src="../images/products/laptop.jpg" alt="" class="product-small-image">--}}
-{{--            </div>--}}
+            <div class="flex">
+                @if($images)
+                    <img src="{{ getProductImage($product->image) }}" alt="" class="product-small-image">
+                    @foreach($images as $image)
+                        <img src="{{ getProductImage($image) }}" alt="" class="product-small-image">
+                    @endforeach
+                @endif
+            </div>
         </div>
         <div class="w-1/2 pl-24 text-left">
             <h3 class="heading text-left mb-1">{{ $product->name }}</h3>
@@ -39,7 +42,7 @@
                 In Stock
             </div>
             <div class="heading text-left mb-6">{{ $product->presentPrice() }}</div>
-            <div class="main-text mb-16">{{ $product->description }}</div>
+            <div class="main-text mb-16">{!! $product->description; !!}</div>
             <form action="{{route('cart.store')}}" method="POST">
                 @csrf
                 <input type="hidden" name="id" value="{{$product->id}}">
@@ -52,4 +55,24 @@
 
     @include('recommended')
 
+@endsection
+
+@section('scripts')
+    <script>
+        window.onload = () => {
+            let mainImage = document.querySelector('.product-main-image > img');
+            let smallImages = document.querySelectorAll('.product-small-image');
+
+
+            smallImages.forEach(image => {
+                image.addEventListener('click', (e) => {
+                    smallImages.forEach(image => {
+                        image.classList.remove('selected');
+                    });
+                    image.classList.add('selected');
+                    mainImage.src = e.target.src;
+                });
+            });
+        };
+    </script>
 @endsection

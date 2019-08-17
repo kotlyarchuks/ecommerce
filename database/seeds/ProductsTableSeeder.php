@@ -18,7 +18,8 @@ class ProductsTableSeeder extends Seeder
             'details' => '15.6 GTX 1060 2.2kg',
             'price' => '51590',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eos harum hic ipsum minima nesciunt quo quod quos saepe ut.',
-            'featured' => true
+            'image' => '/products/August2019/asus-tuf-gaming.jpg',
+            'featured' => true,
         ])->categories()->attach(1);
 
         Product::create([
@@ -26,7 +27,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'dell-inspiron',
             'details' => '13.3 Intel HD 620 1.4kg',
             'price' => '34350',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dignissimos fugit, id in iusto nam necessitatibus quod quos repudiandae vel?'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dignissimos fugit, id in iusto nam necessitatibus quod quos repudiandae vel?',
+            'image' => '/products/August2019/dell-inspiron.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -35,7 +37,8 @@ class ProductsTableSeeder extends Seeder
             'details' => '15.6 GTX 1060 2.7kg',
             'price' => '69990',
             'featured' => true,
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolores ea eos minus reiciendis? Blanditiis cupiditate dolorum id qui quia.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolores ea eos minus reiciendis? Blanditiis cupiditate dolorum id qui quia.',
+            'image' => '/products/August2019/xiaomi-mi-gaming-laptop.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -43,7 +46,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'xiaomi-mi-notebook-air',
             'details' => '13.3 MX150 1.3kg',
             'price' => '52900',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ducimus eveniet ipsam magni odit optio pariatur perferendis qui quibusdam, recusandae.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ducimus eveniet ipsam magni odit optio pariatur perferendis qui quibusdam, recusandae.',
+            'image' => '/products/August2019/xiaomi-mi-notebook-air.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -51,7 +55,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'asus-zenbook-15',
             'details' => '15.6 GTX1050 1.59kg',
             'price' => '77400',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae corporis culpa cum dignissimos enim minima obcaecati quasi, reiciendis voluptatibus.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae corporis culpa cum dignissimos enim minima obcaecati quasi, reiciendis voluptatibus.',
+            'image' => '/products/August2019/asus-zenbook-15.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -59,7 +64,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'hp-250-g6',
             'details' => '15.6 Intel HD 620 1.86kg',
             'price' => '16480',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium debitis deserunt eaque fugiat molestias, nobis nulla odio quasi quod reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium debitis deserunt eaque fugiat molestias, nobis nulla odio quasi quod reprehenderit.',
+            'image' => '/products/August2019/hp-250-g6.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -67,7 +73,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'dell-vostro',
             'details' => '14 Intel HD 620 1.55kg',
             'price' => '37392',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque corporis deleniti dignissimos maxime modi natus perferendis perspiciatis similique vero.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque corporis deleniti dignissimos maxime modi natus perferendis perspiciatis similique vero.',
+            'image' => '/products/August2019/dell-vostro.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -75,7 +82,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'acer-aspire-3',
             'details' => '15.6 Radeon R2 620 2.1kg',
             'price' => '14760',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse in incidunt voluptatem. Ad atque placeat tenetur voluptates. Cumque, enim error.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse in incidunt voluptatem. Ad atque placeat tenetur voluptates. Cumque, enim error.',
+            'image' => '/products/August2019/acer-aspire-3.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -83,7 +91,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'lenovo-ideapad-s530',
             'details' => '13.3 Intel UHD 620 1.25kg',
             'price' => '49340',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cum cumque dolor dolorum eius nemo porro quibusdam quisquam quos ut!'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cum cumque dolor dolorum eius nemo porro quibusdam quisquam quos ut!',
+            'image' => '/products/August2019/lenovo-ideapad-s530.jpg',
         ])->categories()->attach(1);
 
         //        10
@@ -92,7 +101,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'dell-g3-15',
             'details' => '15.6 GTX 1050Ti 2.53kg',
             'price' => '53680',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi dicta ipsam modi mollitia omnis recusandae reiciendis rem repudiandae voluptatibus!'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi dicta ipsam modi mollitia omnis recusandae reiciendis rem repudiandae voluptatibus!',
+            'image' => '/products/August2019/dell-g3-15.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -100,7 +110,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'acer-nitro-5',
             'details' => '15.6 GTX 1060 2.7kg',
             'price' => '58750',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cumque eius, ipsam soluta suscipit totam vel vero voluptatum! Ullam, vel.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cumque eius, ipsam soluta suscipit totam vel vero voluptatum! Ullam, vel.',
+            'image' => '/products/August2019/acer-nitro-5.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -108,7 +119,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'huawei-matebook-x-pro',
             'details' => '13.9 MX150 1.33kg',
             'price' => '98500',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/huawei-matebook-x-pro.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -116,15 +128,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'lenovo-yoga-530-14',
             'details' => '14 Intel HD 610 1.6kg',
             'price' => '32628',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
-        ])->categories()->attach(1);
-
-        Product::create([
-            'name' => 'Lenovo Yoga 530-14',
-            'slug' => 'lenovo-yoga-530-14',
-            'details' => '14 Intel HD 610 1.6kg',
-            'price' => '32628',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/lenovo-yoga-530-14.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -132,7 +137,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'asus-rog-gl504',
             'details' => '15.6 GTX 1060 2.4kg',
             'price' => '82890',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/asus-rog-gl504.jpg',
         ])->categories()->attach(1);
 
         Product::create([
@@ -140,7 +146,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'msi-gf63',
             'details' => '15.6 GTX 1050 1.86kg',
             'price' => '49990',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/msi-gf63.jpg',
         ])->categories()->attach(1);
 
         // ********
@@ -151,7 +158,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'lenovo-ideacentre-510s',
             'details' => '4GB IntelB360',
             'price' => '25750',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/lenovo-ideacentre-510s.jpg',
         ])->categories()->attach(2);
 
         Product::create([
@@ -159,7 +167,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'asus-pro-e520',
             'details' => '4GB i3',
             'price' => '26088',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/asus-pro-e520.jpg',
         ])->categories()->attach(2);
 
         Product::create([
@@ -167,7 +176,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'iru-home-120mt',
             'details' => '4GB Mini-Tower',
             'price' => '10100',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/iru-home-120mt.jpg',
         ])->categories()->attach(2);
 
         Product::create([
@@ -176,6 +186,7 @@ class ProductsTableSeeder extends Seeder
             'details' => '16GB i7',
             'price' => '141990',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/msi-trident-a.jpg',
             'featured' => true
         ])->categories()->attach(2);
 
@@ -184,7 +195,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'asus-e510',
             'details' => '4GB Intel Celeron',
             'price' => '12000',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/asus-e510.jpg',
         ])->categories()->attach(2);
 
         // ********
@@ -196,7 +208,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'xiaomi-redmi-7',
             'details' => '3/32GB',
             'price' => '9900',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/xiaomi-redmi-7.jpg',
         ])->categories()->attach(3);
 
         Product::create([
@@ -204,7 +217,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'xiaomi-mi-9-se',
             'details' => '6/64GB',
             'price' => '19890',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/xiaomi-mi-9-se.jpg',
         ])->categories()->attach(3);
 
         Product::create([
@@ -212,7 +226,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'samsung-galaxy-s10e',
             'details' => '6/128GB',
             'price' => '36490',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/samsung-galaxy-s10e.jpg',
         ])->categories()->attach(3);
 
         Product::create([
@@ -220,7 +235,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'samsung-galaxy-a40',
             'details' => '4/64GB',
             'price' => '14990',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/samsung-galaxy-a40.jpg',
         ])->categories()->attach(3);
 
         Product::create([
@@ -229,6 +245,7 @@ class ProductsTableSeeder extends Seeder
             'details' => '6/128GB',
             'price' => '24990',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/xiaomi-mi-9t.jpg',
             'featured' => true
         ])->categories()->attach(3);
 
@@ -242,7 +259,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'xiaomi-mipad-4',
             'details' => '4/64GB',
             'price' => '16490',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/xiaomi-mipad-4.jpg',
         ])->categories()->attach(4);
 
         Product::create([
@@ -250,7 +268,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'apple-ipad-2018',
             'details' => '2/32GB',
             'price' => '22490',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/apple-ipad-2018.jpg',
         ])->categories()->attach(4);
 
         Product::create([
@@ -258,7 +277,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'samsung-galaxy-tab-a',
             'details' => '2/32GB',
             'price' => '15490',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/samsung-galaxy-tab-a.jpg',
         ])->categories()->attach(4);
 
         Product::create([
@@ -266,7 +286,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'huawei-mediapad-m5',
             'details' => '3/32GB',
             'price' => '15980',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/huawei-mediapad-m5.jpg',
         ])->categories()->attach(4);
 
         Product::create([
@@ -274,7 +295,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'apple-ipad-air-2019',
             'details' => '4/64GB',
             'price' => '39990',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/apple-ipad-air-2019.jpg',
         ])->categories()->attach(4);
 
 
@@ -287,7 +309,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'philips-50put6023',
             'details' => '127cm 4k',
             'price' => '24340',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/philips-50put6023.jpg',
         ])->categories()->attach(5);
 
         Product::create([
@@ -295,7 +318,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'samsung-ue32n5000au',
             'details' => '80cm 1080p',
             'price' => '19020',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/samsung-ue32n5000au.jpg',
         ])->categories()->attach(5);
 
         Product::create([
@@ -303,7 +327,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'samsung-ue43nu7090u',
             'details' => '109cm 4k',
             'price' => '33650',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/samsung-ue43nu7090u.jpg',
         ])->categories()->attach(5);
 
         Product::create([
@@ -311,7 +336,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'samsung-t24h390si',
             'details' => '60cm 1080p',
             'price' => '14600',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/samsung-t24h390si.jpg',
         ])->categories()->attach(5);
 
         Product::create([
@@ -319,7 +345,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'lg-32lj500v',
             'details' => '81cm 1080p',
             'price' => '14600',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/lg-32lj500v.jpg',
         ])->categories()->attach(5);
 
 
@@ -332,7 +359,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'canon-eos-m50',
             'details' => '',
             'price' => '39990',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/canon-eos-m50.jpg',
         ])->categories()->attach(6);
 
         Product::create([
@@ -340,7 +368,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'nikon-d3500',
             'details' => '',
             'price' => '27930',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/nikon-d3500.jpg',
         ])->categories()->attach(6);
 
         Product::create([
@@ -348,7 +377,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'canon-eos-4000d',
             'details' => '',
             'price' => '17190',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/canon-eos-4000d.jpg',
         ])->categories()->attach(6);
 
         Product::create([
@@ -356,7 +386,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'fujifilm-x-t30',
             'details' => '',
             'price' => '69990',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/fujifilm-x-t30.jpg',
         ])->categories()->attach(6);
 
         Product::create([
@@ -364,7 +395,8 @@ class ProductsTableSeeder extends Seeder
             'slug' => 'canon-powershot-g9x',
             'details' => '',
             'price' => '23490',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur exercitationem laboriosam pariatur possimus, quis voluptatum. Eaque inventore, qui? Ab, reprehenderit.',
+            'image' => '/products/August2019/canon-powershot-g9x',
         ])->categories()->attach(6);
     }
 }

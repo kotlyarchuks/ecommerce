@@ -8035,7 +8035,11 @@ body {
   margin-right: 1.25rem;
   padding: 0.5rem;
   height: 75px;
-  width: auto;
+  width: 100px;
+}
+
+.product-small-image.selected {
+  border: 2px solid #000;
 }
 
 .product-stats {
