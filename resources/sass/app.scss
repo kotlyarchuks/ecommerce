@@ -88,6 +88,11 @@ body {
   li:hover {
     @apply .text-light-darker;
   }
+
+  .user-name {
+    text-transform: capitalize;
+    font-size: 14px;
+  }
 }
 
 .hero-header {

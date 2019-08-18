@@ -22,6 +22,7 @@
                 <div class="right-side">
                     <ul class="menu-list">
                         @auth
+                            <li class="user-name">{{ auth()->user()->name }}</li>
                             <li><a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">

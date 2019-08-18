@@ -7915,6 +7915,11 @@ body {
   color: #d0d0d0;
 }
 
+.menu-list .user-name {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
 .hero-header {
   font-size: 52px;
   font-family: Montserrat, sans-serif;
